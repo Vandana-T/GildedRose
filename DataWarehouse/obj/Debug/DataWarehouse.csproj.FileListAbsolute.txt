@@ -1,0 +1,6 @@
+c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouse\bin\DataWarehouse.dll.config
+c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouse\bin\DataWarehouse.dll
+c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouse\bin\DataWarehouse.pdb
+c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouse\obj\Debug\DataWarehouse.dll
+c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouse\obj\Debug\DataWarehouse.pdb
+c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouse\obj\Debug\DataWarehouse.csprojResolveAssemblyReference.cache
