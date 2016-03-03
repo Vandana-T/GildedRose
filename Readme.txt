@@ -1,4 +1,10 @@
 1)  Choice of DataFormat
+	HTTP API with json response format.  The URLs I designed are very simple and intuitive close to how ODATA URL formats look like. 
+
+	For Response, Json is a widely adopted format. It is human readable and reasonably fast. 
+
+2) Request/Response details 
+
 	a) GetItems:  Gets all items from the repository 
 		Sample Request: http://<hostname>/OrderService.svc/getitems 
 		Sample Response: 
@@ -11,9 +17,11 @@
 
 		{"PurchaseItemResult":{"Body":"{\"Description\":\"Description4\",\"Name\":\"Name4\",\"Price\":4}","Message":"Succeeded","RequestStatus":"OK"}}
 
+3) Authentication and Authorization (Not complete):  The idea is to use the WCF settings for role based authorization to prohibit the access of purchase items to just the authenticated users.  GetItems can be open to everyone.  I wasn't able to get this working. web.config file in the Datawarehouse project has a commented out section describing the settings.  But seems like there is an issue with it. If setup correctly it should call the Authenticator.Validate method. 	
+
+
 Enhancements that can be made further
+
 1) Tests for Database.cs :  This will be some kind of database in real world. The tests for the individual methods of Database.cs were not written, although the unit tests for OrderService should cover it. 
 
 2) Separating Functional and Unit tests:  Generally these should be separated out but to keep it simple they have been combined into a single project. 
-
-3) Authentication and Authorization (Not complete):  The idea is to use the WCF settings for role based authorization to prohibit the access of purchase items to just the authenticated users.  GetItems can be open to everyone.  I wasn't able to get this working. web.config file in the Datawarehouse project has a commented out section describing the settings.  But seems like there is an issue with it. If setup correctly it should call the Authenticator.Validate method. 	
