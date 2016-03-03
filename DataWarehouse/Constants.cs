@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace DataWarehouse
+﻿namespace DataWarehouse
 {
+    /// <summary>
+    /// Response Message enum to indicate the status of the request
+    /// </summary>
     public static class ResponseMessage
     {
         public const string Success = "Succeeded";

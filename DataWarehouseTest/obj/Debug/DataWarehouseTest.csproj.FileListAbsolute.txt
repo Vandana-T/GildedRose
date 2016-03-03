@@ -1,8 +1,0 @@
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\bin\Debug\DataWarehouseTest.dll
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\bin\Debug\DataWarehouseTest.pdb
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\bin\Debug\DataWarehouse.dll
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\bin\Debug\DataWarehouse.pdb
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\obj\Debug\DataWarehouseTest.csprojResolveAssemblyReference.cache
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\obj\Debug\DataWarehouseTest.dll
-c:\users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\obj\Debug\DataWarehouseTest.pdb
-C:\Users\vandanat\documents\visual studio 2013\Projects\DataWarehouse\DataWarehouseTest\bin\Debug\DataWarehouseTest.dll.config

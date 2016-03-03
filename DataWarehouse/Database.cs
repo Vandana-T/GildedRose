@@ -39,6 +39,14 @@
             return _allItems.TryGetValue(id, out item);
         }
 
+        /// <summary>
+        /// Wrapper around the TryRemove around the ConcurrentDictionary
+        /// Instead of exposing the dictionary itself and all its methods, we can closely control what functionality of the dictionary is exposed to client. 
+        /// </summary>
+        /// <param name="id">Id of the element</param>
+        /// <param name="item">Return the Item removed</param>
+        /// <returns>true if the operation succeeded, false otherwise</returns>
+        /// <returns></returns>
         public static bool TryRemove(string id, out Item item)
         {
             return _allItems.TryRemove(id, out item);
@@ -69,7 +77,6 @@
 
             return new KeyValuePair<string, Item>(itemId, newItem);
         } 
-
 
         /// <summary>
         /// Initialized the database and fills it with items

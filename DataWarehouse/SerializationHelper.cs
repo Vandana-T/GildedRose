@@ -10,6 +10,12 @@ namespace DataWarehouse
 
     public class SerializationHelper
     {
+        /// <summary>
+        /// Serialize the object into JSON
+        /// </summary>
+        /// <typeparam name="T">Type of the object</typeparam>
+        /// <param name="value">Instance of the object</param>
+        /// <returns>JSON representation of the object</returns>
         public static string Serialize<T>(T value)
         {
             string serializedJsonForObject = null; 

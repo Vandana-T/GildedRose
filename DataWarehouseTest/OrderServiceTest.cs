@@ -20,6 +20,9 @@ namespace DataWarehouseTest
             _service = new OrderService();
         }
 
+        /// <summary>
+        /// Tests the get items method with a valid instance of item
+        /// </summary>
         [TestMethod]
         public void TestGetItemsWithValidItem()
         {
@@ -39,6 +42,9 @@ namespace DataWarehouseTest
             Assert.AreEqual(resultCount + 1, newResultCount);
         }
 
+        /// <summary>
+        /// Tests the failure scenarios
+        /// </summary>
         [TestMethod]
         public void TestGetItemsWithBadAddItem()
         {
@@ -65,6 +71,9 @@ namespace DataWarehouseTest
             Assert.AreEqual(resultCount, newResultCount);
         }
 
+        /// <summary>
+        /// Tests the purchase item request
+        /// </summary>
         [TestMethod]
         public void TestPurchaseItems()
         {
@@ -81,6 +90,9 @@ namespace DataWarehouseTest
         }
 
 
+        /// <summary>
+        /// Multithreaded test for purchasing items
+        /// </summary>
         [TestMethod]
         public void TestMultiThreadedPurchaseItems()
         {

@@ -1,24 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
-
-namespace DataWarehouse
+﻿namespace DataWarehouse
 {
-    using System.Runtime.Serialization.Json;
+    using System; 
 
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "OrderService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select OrderService.svc or OrderService.svc.cs at the Solution Explorer and start debugging.
     public class OrderService : IOrderService
     {
+        /// <summary>
+        /// Implementation of the GetItems method to return all items in the repository
+        /// </summary>
+        /// <returns>Response for the requested operation</returns>
         public Response GetItems()
         {
             return Response.CreateResponse(Status.OK, ResponseMessage.Success, Database.GetAllItems());
         }
 
+        /// <summary>
+        /// Implementation for purchasing an item specified by the id.
+        /// </summary>
+        /// <param name="id">Id of the item to be purchased</param>
+        /// <returns>Response for the requested operation</returns>
         public Response PurchaseItem(string id)
         {
             string errorMessage = string.Empty;
@@ -38,6 +37,12 @@ namespace DataWarehouse
             return response;
         }
 
+        /// <summary>
+        /// Purchase an Item specified by id.
+        /// </summary>
+        /// <param name="id">Id of the item to be purchased</param>
+        /// <param name="errorMessage">ErrorMessage if any</param>
+        /// <returns>Item purchased</returns>
         public static Item PurchaseItem(string id, out string errorMessage)
         {
             errorMessage = string.Empty;

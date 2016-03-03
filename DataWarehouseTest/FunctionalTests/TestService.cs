@@ -13,7 +13,7 @@
     using DataWarehouseTest.OrderServiceReference;
 
     /// <summary>
-    /// Summary description for TestGetItems
+    /// Functional test for the service
     /// </summary>
     [TestClass]
     public class TestService
@@ -21,14 +21,14 @@
         [TestInitialize]
         public void InitializeTests()
         {
-            //_client = new OrderServiceClient();
+            _client = new OrderServiceClient();
         }
 
         [TestMethod]
         public void TestValidGetItems()
         {
             // Repository should never be empty
-            var response = MakeRequest(TestUtils.getItemsUrl); 
+            var response = _client.GetItems(); 
             var deserializedResponse  = TestUtils.ValidateResponse<IEnumerable<KeyValuePair<string, Item>>>(response, Status.OK, ResponseMessage.Success);
             Assert.IsTrue(deserializedResponse.Any());
         }
@@ -67,28 +67,33 @@
             TestUtils.ValidateResponse<Item>(response, Status.Failed, ResponseMessage.InvalidId);
         }
 
-        public static Response MakeRequest(string requestUrl)
-        {
-            try
-            {
-                HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
-                using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
-                {
-                    if (response.StatusCode != HttpStatusCode.OK)
-                        throw new Exception(
-                            String.Format("Server error (HTTP {0}: {1}).", response.StatusCode, response.StatusDescription));
-                    DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));
-                    object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
-                    Response jsonResponse = objResponse as Response;
-                    return jsonResponse;
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
+        ///// <summary>
+        ///// Http request construction
+        ///// </summary>
+        ///// <param name="requestUrl"></param>
+        ///// <returns></returns>
+        //public static Response MakeRequest(string requestUrl)
+        //{
+        //    try
+        //    {
+        //        HttpWebRequest request = WebRequest.Create(requestUrl) as HttpWebRequest;
+        //        using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
+        //        {
+        //            if (response.StatusCode != HttpStatusCode.OK)
+        //                throw new Exception(
+        //                    String.Format("Server error (HTTP {0}: {1}).", response.StatusCode, response.StatusDescription));
+        //            DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(Response));
+        //            object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
+        //            Response jsonResponse = objResponse as Response;
+        //            return jsonResponse;
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e.Message);
+        //        return null;
+        //    }
+        //}
 
         private OrderServiceClient _client;
     }
